@@ -1,16 +1,17 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo"
 
-const Profile = () => {
+const Profile = (props) => {
+
     return (
         <div>
-            <div>
-                <img src='https://www.mrspedag.com/wp-content/uploads/header_ittools.jpg'/>
-            </div>
-            <div>
-                ava+description
-            </div>
-            <MyPosts />
+           <ProfileInfo />
+           <MyPosts posts={props.profilePage.postsData}
+                    addPost={props.addPost}
+                    newPostText={props.profilePage.newPostText}
+                    updateNewPostText={props.updateNewPostText}
+           />
         </div>
     );
 }
